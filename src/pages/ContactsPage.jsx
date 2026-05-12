@@ -75,7 +75,27 @@ if ( !loading && contacts.length === 0 ) {
         Contacts
       </h1>
 
-      <div className="overflow-hidden rounded-3xl border border-white/10 bg-slate-900">
+       <div className="flex justify-end mb-6">
+
+       <Link to="/contact"
+          className="
+            rounded-xl
+            bg-indigo-600
+            px-6 py-3
+            text-sm font-semibold text-white
+            shadow-lg
+            transition
+            hover:bg-indigo-500
+            hover:shadow-indigo-500/30
+            active:scale-95
+          "
+        >
+          + New Contact
+        </Link>
+
+      </div>
+
+      <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900 p-6 shadow-xl">
 
         <table className="w-full">
 
@@ -94,6 +114,8 @@ if ( !loading && contacts.length === 0 ) {
               <th className="px-6 py-5 text-left">
                 Email
               </th>
+
+              <th className="py-3">Created At</th>
 
               <th className="px-6 py-5 text-left">
                 Actions
@@ -125,6 +147,9 @@ if ( !loading && contacts.length === 0 ) {
                     {contact.email}
                   </td>
 
+                  <td className="py-5 text-sm text-slate-400">
+                    {new Date(contact.createdAt).toLocaleString()}
+                  </td>
                   <td className="px-6 py-5">
 
                     <Link
