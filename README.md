@@ -1,4 +1,4 @@
-# 📬 Contact Admin Frontend
+# 📬 IdeaHub Frontend
 
 A React frontend for managing contact submissions, built with:
 
@@ -32,8 +32,10 @@ npm install
 ## 3. Create environment file
 Create .env in root:
 
+```bash
 VITE_API_BASE_URL=http://localhost:8000/api
 VITE_RECAPTCHA_SITE_KEY=your_site_key_here
+```
 
 ## 4. Run development server
 
