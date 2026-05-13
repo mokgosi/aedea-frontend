@@ -45,7 +45,7 @@ GOOGLE_RECAPTCHA_SECRET_KEY=SECRET_KEY
 ```bash
 $ git clone git@github.com:mokgosi/aedea-frontend.git
 $ cd aedea-frontend
-$ cp .env-example .env
+$ cp .env-example .env.local
 
 VITE_RECAPTCHA_SITE_KEY=RECAPTCHA_SITE_KEY
 ```
