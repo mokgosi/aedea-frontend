@@ -64,11 +64,6 @@ if (loading) {
 if ( !loading && contacts.length === 0 ) {
   return (
     <>
-      
-
-       
-
-      
     
       <div className="p-10 text-center text-slate-400">
         No contacts found.
@@ -97,7 +92,7 @@ if ( !loading && contacts.length === 0 ) {
   return (
     <div className="mx-auto max-w-7xl px-6 py-12">
       <h1 className="mb-10 text-5xl font-bold">
-        Contacts
+        Messages
       </h1>
 
        <div className="flex justify-end mb-6">

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 import api from '../services/api'
 
@@ -7,8 +7,9 @@ export default function ContactShowPage() {
 
   const { id } = useParams()
 
-  const [contact, setContact] =
-    useState(null)
+  const [contact, setContact] = useState(null)
+
+  const navigate = useNavigate()
 
   useEffect(() => {
 
@@ -75,6 +76,25 @@ export default function ContactShowPage() {
           </div>
 
         </div>
+
+        <div className="mb-6 mt-6 flex items-center">
+
+            <button
+              onClick={() => navigate(-1)}
+              className="
+                rounded-xl
+                border border-slate-700
+                bg-slate-900
+                px-4 py-2
+                text-sm font-medium text-white
+                transition
+                hover:bg-slate-800
+              "
+            >
+              ← Back
+            </button>
+
+          </div>
 
       </div>
 
