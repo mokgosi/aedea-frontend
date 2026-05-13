@@ -28,17 +28,17 @@ export default function ContactsPage() {
       console.log(response.data)
 
       const contactsData =
-  data['hydra:member'] ||
-  data.member ||
-  []
+        data['hydra:member'] ||
+        data.member ||
+        []
 
-setContacts(contactsData)
+      setContacts(contactsData)
 
       setTotalItems(
-  data['hydra:totalItems'] ||
-  data.totalItems ||
-  0
-)
+        data['hydra:totalItems'] ||
+        data.totalItems ||
+        0
+      )
 
       setLoading(false)
     }
@@ -63,9 +63,34 @@ if (loading) {
 
 if ( !loading && contacts.length === 0 ) {
   return (
-    <div className="p-10 text-center text-slate-400">
-      No contacts found.
-    </div>
+    <>
+      
+
+       
+
+      
+    
+      <div className="p-10 text-center text-slate-400">
+        No contacts found.
+        <div className="mt-6"> 
+          <Link to="/contact"
+            className="
+              rounded-xl
+              bg-indigo-600
+              px-6 py-3
+              text-sm font-semibold text-white
+              shadow-lg
+              transition
+              hover:bg-indigo-500
+              hover:shadow-indigo-500/30
+              active:scale-95
+            "
+          >
+            + New Message
+          </Link>
+        </div>
+      </div>
+    </>
   )
 }
 
@@ -90,7 +115,7 @@ if ( !loading && contacts.length === 0 ) {
             active:scale-95
           "
         >
-          + New Contact
+          + New Message
         </Link>
 
       </div>
@@ -179,8 +204,6 @@ if ( !loading && contacts.length === 0 ) {
           <div className="text-sm text-slate-400">
             Showing page {page} of {totalPages}
           </div>
-
-
 
           <div className="flex gap-2">
 
