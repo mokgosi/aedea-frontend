@@ -17,30 +17,43 @@ A React frontend for managing contact submissions, built with:
 
 # ⚙️ Installation
 
-## 1. Clone repository
+If not done using API README yet
+
+## 1. Clone main app
 
 ```bash
-git clone <repo-url>
-cd frontend
+$ git clone git@github.com:mokgosi/aedea-app.git
+$ cd aedea-app
 ```
-## 2. Install Dependencies
+
+## 2. Clone Api & Setup 
 
 ```bash
-npm install
+$ git clone git@github.com:mokgosi/aedea-api.git
+$ cd aedea-api
+$ cp .env-example .env
+
+DATABASE_URL="mysql://user:password@127.0.0.1:3306/db_name"
+GOOGLE_RECAPTCHA_SITE_KEY=SITE_KEY
+GOOGLE_RECAPTCHA_SECRET_KEY=SECRET_KEY
 ```
 
-## 3. Create environment file
-Create .env in root:
+## 3. Clone frontend
+
+## 4. Clone frontend
 
 ```bash
-VITE_API_BASE_URL=http://localhost:8000/api
-VITE_RECAPTCHA_SITE_KEY=your_site_key_here
+$ git clone git@github.com:mokgosi/aedea-frontend.git
+$ cd aedea-frontend
+$ cp .env-example .env
+
+VITE_RECAPTCHA_SITE_KEY=RECAPTCHA_SITE_KEY
 ```
 
-## 4. Run development server
+## 4. Execute Setup
 
 ```bash
-npm run dev
+$ ./scripts/setup.sh
+
 ```
 
-Your frontend runs here: http://localhost:5173
