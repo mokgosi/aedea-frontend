@@ -21,12 +21,25 @@ export default function RegisterPage() {
 
     try {
 
-      await api.post(
-        '/register',
-        form
+      await api.post('/register', form)
+
+      // Auto login
+
+      const response = await api.post('/auth', form)
+
+      // Store JWT
+
+      localStorage.setItem(
+        'token',
+        response.data.token
       )
 
-      navigate('/login')
+      localStorage.setItem(
+        'refresh_token',
+        response.data.refresh_token
+      )
+
+      navigate('/contacts')
 
     } catch {
 
