@@ -39,7 +39,11 @@ export default function RegisterPage() {
         response.data.refresh_token
       )
 
-      navigate('/contacts')
+      navigate('/contacts', {
+        state: {
+          flashMessage: 'Welcome! Your account was created successfully 🎉',  
+        },
+      })
 
     } catch {
 

@@ -15,45 +15,55 @@ A React frontend for managing contact submissions, built with:
 
 ---
 
-# ⚙️ Installation
 
-If not done using API README yet
+# 📥 Docker Installation  -  coupled with Backend(Api)
 
-## 1. Clone main app
+If not done using Frontend README yet
 
 ```bash
 $ git clone git@github.com:mokgosi/aedea-app.git
 $ cd aedea-app
 ```
 
-## 2. Clone Api & Setup 
+Then read throgh README.md for further installation instructions.
 
-```bash
-$ git clone git@github.com:mokgosi/aedea-api.git
-$ cd aedea-api
-$ cp .env-example .env
 
-DATABASE_URL="mysql://user:password@127.0.0.1:3306/db_name"
-GOOGLE_RECAPTCHA_SITE_KEY=SITE_KEY
-GOOGLE_RECAPTCHA_SECRET_KEY=SECRET_KEY
-```
+ -----  OR  ----
 
-## 3. Clone frontend
 
-## 4. Clone frontend
+# 📥  Standalonne Installation
+
+If not done using API README yet
+
+## 1. Clone main app
 
 ```bash
 $ git clone git@github.com:mokgosi/aedea-frontend.git
 $ cd aedea-frontend
-$ cp .env-example .env.local
 
-VITE_RECAPTCHA_SITE_KEY=RECAPTCHA_SITE_KEY
 ```
 
-## 4. Execute Setup
+## 2. Install Dependencies
 
 ```bash
-$ ./scripts/setup.sh
-
+npm install
 ```
+
+## 3. Create environment file
+Create .env in root:
+
+```bash
+$ cp .env-example .env
+
+VITE_API_BASE_URL=http://localhost:8000/api
+VITE_RECAPTCHA_SITE_KEY=your_site_key_here
+```
+
+## 4. Run development server
+
+```bash
+npm run dev
+```
+
+Your frontend runs here: http://localhost:5173
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import api from '../services/api'
 
@@ -10,6 +10,10 @@ export default function ContactsPage() {
   const [page, setPage] = useState(1)
   const [totalItems, setTotalItems] = useState(0)
   const itemsPerPage = 5
+  const location = useLocation()
+  const [flash, setFlash] = useState(
+    location.state?.flashMessage || ''
+  )
 
   const totalPages =
   Math.ceil(
@@ -45,12 +49,21 @@ export default function ContactsPage() {
 
     loadContacts()
 
+    if (flash) {
+
+      const timer = setTimeout(() => {
+        setFlash('')
+      }, 4000)
+
+      return () => clearTimeout(timer)
+    }
+
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     })
 
-  }, [page])
+  }, [page, flash])
 
 
 if (loading) {
@@ -114,6 +127,26 @@ if ( !loading && contacts.length === 0 ) {
         </Link>
 
       </div>
+
+      {flash && (
+
+        <div
+          className="
+            mb-6
+            rounded-xl
+            border border-emerald-500/30
+            bg-emerald-500/10
+            px-4 py-3
+            text-sm font-medium
+            text-emerald-300
+            shadow-lg
+            backdrop-blur
+          "
+        >
+          {flash}
+        </div>
+
+      )}
 
       <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900 p-6 shadow-xl">
 
